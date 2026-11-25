@@ -1,0 +1,326 @@
+<app-header></app-header>
+<div class="register-page">
+
+  <!-- Decorative Background -->
+  <div class="decor-circle circle-one"></div>
+  <div class="decor-circle circle-two"></div>
+
+  <div class="register-container">
+
+    <!-- LEFT SIDE -->
+    <div class="register-banner">
+
+      <div class="om-symbol">ॐ</div>
+
+      <h1>Mana Bandham</h1>
+
+      <p class="tagline">
+        Traditional Telugu Matrimony
+      </p>
+
+      <div class="gold-line"></div>
+
+      <h2>Begin Your Journey</h2>
+
+      <p class="banner-text">
+        Create your profile and take the first step
+        towards finding your perfect life partner.
+      </p>
+
+      <div class="wedding-symbols">
+        ✦ ❈ ✦ ❈ ✦
+      </div>
+
+      <div class="telugu-quote">
+        "మనసులు కలిస్తే బంధం అందంగా మారుతుంది"
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="register-form-section">
+
+      <div class="form-header">
+
+        <div class="register-icon">
+          💍
+        </div>
+
+        <h2>Create Account</h2>
+
+        <p>
+          Register with Mana Bandham
+        </p>
+
+      </div>
+
+
+      <form [formGroup]="registerform" (ngSubmit)="onsubmit()" >
+
+        <!-- Full Name + Gender -->
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Full Name</label>
+
+            <div class="input-box">
+
+              <span>👤</span>
+
+              <input
+                type="text" formControlName="fullname"
+                placeholder="Enter your full name"
+              />
+
+            </div>
+            <small
+            *ngIf="registerform.get('fullname')?.touched &&
+                 registerform.get('fullname')?.hasError('required')">
+            full name is required.
+          </small>
+
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Gender</label>
+
+            <div class="input-box">
+
+              <span>⚥</span>
+
+              <select formControlName="gender"> 
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+
+            </div>
+            <small
+            *ngIf="registerform.get('gender')?.touched &&
+                 registerform.get('gender')?.hasError('required')">
+            gender is required.
+          </small>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- Mobile + Email -->
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Mobile Number</label>
+
+            <div class="input-box">
+
+              <span>📱</span>
+
+              <input
+                type="tel" formControlName="mobilenumber"
+                placeholder="Enter mobile number"
+              />
+
+            </div>
+            <small
+            *ngIf="registerform.get('mobilenumber')?.touched &&
+                 registerform.get('mobilenumber')?.hasError('required')">
+            mobile number is required.
+          </small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Email Address</label>
+
+            <div class="input-box">
+
+              <span>✉️</span>
+
+              <input
+                type="email" formControlName="emailaddress"
+                placeholder="Enter email address"
+              />
+
+            </div>
+            <small
+            *ngIf="registerform.get('emailaddress')?.touched &&
+                 registerform.get('emailaddress')?.hasError('required')">
+            email address is required.
+          </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- Date of Birth + Location -->
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Date of Birth</label>
+
+            <div class="input-box">
+
+              <span>🎂</span>
+
+              <input formControlName="dateofbirth"
+                type="date"
+              />
+
+            </div>
+            <small
+            *ngIf="registerform.get('dateofbirth')?.touched &&
+                 registerform.get('dateofbirth')?.hasError('required')">
+            date of birth is required.
+          </small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Location</label>
+
+            <div class="input-box">
+
+              <span>📍</span>
+
+              <input
+                type="text" formControlName="location"
+                placeholder="City / District"
+              />
+
+            </div>
+            <small
+            *ngIf="registerform.get('location')?.touched &&
+                 registerform.get('location')?.hasError('required')">
+            location is required.
+          </small>
+            
+
+          </div>
+
+        </div>
+
+
+        <!-- Password -->
+        <div class="form-group">
+
+          <label>Password</label>
+
+          <div class="input-box">
+
+            <span>🔒</span>
+
+            <input
+              type="password" formControlName="password"
+              placeholder="Create a password"
+            />
+
+            <button
+              type="button"
+              class="password-btn">
+              👁
+            </button>==
+
+          </div>
+          <small
+            *ngIf="registerform.get('password')?.touched &&
+                 registerform.get('password')?.hasError('required')">
+            password is required.
+          </small>
+
+        </div>
+
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+
+          <label>Confirm Password</label>
+
+          <div class="input-box">
+
+            <span>🔐</span>
+
+            <input
+              type="password" formControlName="confirmpassword"
+              placeholder="Confirm your password"
+            />
+
+          </div>
+          <small
+            *ngIf="registerform.get('confirm password')?.touched &&
+                 registerform.get('confirm password')?.hasError('required')">
+            confirm password is required.
+          </small>
+
+        </div>
+
+
+        <!-- Terms -->
+        <label class="terms">
+
+          <input type="checkbox">
+
+          <span>
+            I agree to the
+            <a href="#">Terms & Conditions</a>
+            and
+            <a href="#">Privacy Policy</a>
+          </span>
+
+        </label>
+
+
+        <!-- Register Button -->
+        <button
+          type="submit"
+          class="register-main-btn" (click)="onsubmit()">
+
+          Create My Profile
+
+          <span>➜</span>
+
+        </button>
+
+      </form>
+
+
+      <!-- Login -->
+      <div class="login-link">
+
+        <p>
+          Already have an account?
+        </p>
+
+        <a routerLink="/login">
+          Login Here
+        </a>
+
+      </div>
+
+
+      <!-- Security -->
+      <div class="security-note">
+
+        🔐 Your personal information is safe and secure
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

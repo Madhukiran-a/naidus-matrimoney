@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div class="profile-container">
+    <h2>Matrimony Profiles List</h2>
+
+    <table class="profile-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Location</th>
+                <th>Education</th>
+                <th>Profession</th>
+                <th>Language</th>
+                <th>Compatibility</th>
+                <th>Verified</th>
+                <th>Action</th> 
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let profile of profiles">
+                <td>{{ profile.id }}</td>
+                <td>{{ profile.name }}</td>
+                <td>{{ profile.age }}</td>
+                <td>{{ profile.gender }}</td>
+                <td>{{ profile.location }}</td>
+                <td>{{ profile.education }}</td>
+                <td>{{ profile.profession }}</td>
+                <td>{{ profile.language }}</td>
+                <td>{{ profile.compatibility }}%</td>
+                <td>{{ profile.verified ? '✓ Verified' : 'Not verified' }}</td>
+                <td>
+                    <button class="view-btn" type="button"
+                        (click)="openProfile(profile)">
+                        View Profile
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-profile-drawer
+    *ngIf="selectedProfile as profile"
+    [profile]="profile"
+    (closed)="closeProfile()">
+</app-profile-drawer>
+
+<app-footer></app-footer>

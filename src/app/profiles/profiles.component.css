@@ -1,0 +1,51 @@
+
+.profile-container {
+  padding: 25px;
+  overflow-x: auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #8b1e3f;
+  margin-bottom: 25px;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-table th,
+.profile-table td {
+  padding: 14px;
+  border: 1px solid #eee;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.profile-table th {
+  background: #8b1e3f;
+  color: white;
+}
+
+.profile-table tbody tr:hover {
+  background: #fff0f5;
+}
+
+.view-btn {
+  background: #8b1e3f;
+  color: white;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #c03968;
+  transform: scale(1.05);
+}

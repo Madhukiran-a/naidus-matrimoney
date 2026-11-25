@@ -1,0 +1,226 @@
+<app-header></app-header>
+<div class="matches-page">
+
+  <!-- HERO -->
+
+  <section class="matches-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+      <div class="om-symbol">ॐ</div>
+
+      <p class="eyebrow">TRADITIONAL TELUGU MATRIMONY</p>
+
+      <h1>Find Your Perfect Match</h1>
+
+      <p>
+        Discover meaningful connections based on family values,
+        traditions and compatibility.
+      </p>
+
+      <div class="gold-divider">
+        <span>◆</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SEARCH AREA -->
+
+  <section class="search-section">
+
+    <form [formGroup]="findmatchesForm">
+      <div class="search-container">
+
+        <div class="search-heading">
+          <span>Find Your Partner</span>
+          <h2>Search Profiles</h2>
+          <p>
+            Find a suitable life partner from our Telugu community.
+          </p>
+        </div>
+
+        <div class="search-box">
+
+          <!-- Location -->
+          <div class="filter">
+
+            <label>Location</label>
+
+            <select formControlName="location">
+              <option>All Locations</option>
+              <option>Hyderabad</option>
+              <option>Vijayawada</option>
+              <option>Visakhapatnam</option>
+              <option>Guntur</option>
+              <option>Tirupati</option>
+              <option>Nellore</option>
+              <option>Kurnool</option>
+              <option>Rajahmundry</option>
+            </select>
+            <small
+              *ngIf="findmatchesForm.get('location')?.touched &&
+                 findmatchesForm.get('location')?.hasError('required')">
+              findmatches is required.
+            </small>
+
+          </div>
+
+          <!-- Age -->
+          <div class="filter">
+
+            <label>Age</label>
+
+            <select formControlName="age">
+              <option>Any Age</option>
+              <option>21 - 25</option>
+              <option>26 - 30</option>
+              <option>31 - 35</option>
+              <option>36 - 40</option>
+            </select>
+            <small
+              *ngIf="findmatchesForm.get('age')?.touched &&
+                 findmatchesForm.get('age')?.hasError('required')">
+              age is required.
+            </small>
+
+          </div>
+
+          <!-- Education -->
+          <div class="filter">
+
+            <label>Education</label>
+
+            <select formControlName="education">
+              <option>Any Education</option>
+              <option>Engineering</option>
+              <option>Medicine</option>
+              <option>MBA</option>
+              <option>Degree</option>
+              <option>Post Graduation</option>
+            </select>
+            <small
+              *ngIf="findmatchesForm.get('education')?.touched &&
+                 findmatchesForm.get('education')?.hasError('required')">
+              education is required.
+            </small>
+
+          </div>
+
+          <!-- Profession -->
+          <div class="filter">
+
+            <label>Profession</label>
+
+            <select formControlName="profession">
+              <option>Any Profession</option>
+              <option>Software Engineer</option>
+              <option>Doctor</option>
+              <option>Business</option>
+              <option>Government Employee</option>
+              <option>Banking</option>
+            </select>
+            <small
+              *ngIf="findmatchesForm.get('profession')?.touched &&
+                 findmatchesForm.get('profession')?.hasError('required')">
+              profession is required.
+            </small>
+
+          </div>
+
+          <button class="search-btn" (click)=onsubmit()>🔍 Search
+            Matches</button>
+
+        </div>
+
+      </div>
+    </form>
+  </section>
+
+  <!-- MATCHES -->
+
+  <section class="profiles-section">
+
+    <div class="section-title">
+
+      <span>OUR PROFILES</span>
+
+      <h2>Recommended Matches</h2>
+
+      <p>
+        Profiles selected based on your preferences.
+      </p>
+
+    </div>
+
+    <div class="profiles-grid">
+      <div class="profile-card" *ngFor="let profile of profiles">
+
+        <div class="profile-image">
+          <img [src]="profile.image" [alt]="profile.name + ' profile photo'" />
+          <span class="verified" *ngIf="profile.verified">Verified</span>
+        </div>
+
+        <div class="profile-details">
+
+          <h3>{{ profile.name }}</h3>
+
+          <p>Age: {{ profile.age }}</p>
+
+          <p>Location: {{ profile.location }}</p>
+
+          <p>Education: {{ profile.education }}</p>
+
+          <p>Profession: {{ profile.profession }}</p>
+
+          <div class="compatibility">
+            <span>Compatibility</span>
+            <strong>{{ profile.compatibility }}%</strong>
+          </div>
+
+        </div>
+
+        <button type="button" class="view-btn" (click)="viewProfile(profile)">
+          View Profile
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <app-profile-drawer
+    *ngIf="selectedProfile as profile"
+    [profile]="profile"
+    (closed)="closeProfile()">
+  </app-profile-drawer>
+
+  <!-- CTA -->
+
+  <section class="matches-cta">
+
+    <div class="cta-content">
+
+      <span class="cta-icon">💍</span>
+
+      <h2>Looking for Your Life Partner?</h2>
+
+      <p>
+        Create your profile and start your journey
+        towards finding your perfect match.
+      </p>
+
+      <button type="button" class="register-btn" routerLink="/register">
+        Create Your Profile
+      </button>
+
+    </div>
+
+  </section>
+
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,41 @@
+<div class="profile-overlay" role="presentation" (click)="close()">
+  <section
+    class="profile-drawer"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="profile.name + ' profile details'"
+    (click)="$event.stopPropagation()">
+    <button
+      class="close-btn"
+      type="button"
+      aria-label="Close profile details"
+      (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <div class="drawer-photo">
+      <img [src]="profile.image" [alt]="profile.name + ' profile photo'" />
+      <span class="verified" *ngIf="profile.verified">Verified profile</span>
+    </div>
+
+    <div class="drawer-content">
+      <p class="eyebrow">TELUGU MATRIMONY PROFILE</p>
+      <h2>{{ profile.name }}</h2>
+      <p class="location">{{ profile.location }}</p>
+
+      <div class="compatibility">
+        <span>Compatibility</span>
+        <strong>{{ profile.compatibility }}%</strong>
+      </div>
+
+      <h3>About the profile</h3>
+      <dl class="details">
+        <div><dt>Age</dt><dd>{{ profile.age }} years</dd></div>
+        <div><dt>Gender</dt><dd>{{ profile.gender }}</dd></div>
+        <div><dt>Education</dt><dd>{{ profile.education }}</dd></div>
+        <div><dt>Profession</dt><dd>{{ profile.profession }}</dd></div>
+        <div><dt>Mother tongue</dt><dd>{{ profile.language }}</dd></div>
+      </dl>
+    </div>
+  </section>
+</div>

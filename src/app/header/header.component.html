@@ -1,0 +1,74 @@
+<header class="main-header">
+
+  <!-- Decorative top line -->
+  <div class="gold-line"></div>
+
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <div class="brand" routerLink="/">
+
+      <div class="brand-symbol">
+        ॐ
+      </div>
+
+      <div class="brand-text">
+        <h1>Mana Bandham</h1>
+        <span>Traditional Telugu Matrimony</span>
+      </div>
+
+    </div>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="navigation">
+
+      <a routerLink="/" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
+
+      <a routerLink="/findmatches" routerLinkActive="active">
+        Find Matches
+      </a>
+
+      <a routerLink="/aboutus" routerLinkActive="active">
+        About Us
+      </a>
+
+      <a routerLink="/contact" routerLinkActive="active">
+        Contact
+      </a>
+
+      <a routerLink="/profiles" routerLinkActive="active">
+        Profiles
+      </a>
+
+    </nav>
+
+    <!-- ACTION BUTTONS -->
+    <div class="header-actions">
+
+      <button type="button" class="login-btn" routerLink="/login">
+        Login
+      </button>
+
+      <button type="button" class="register-btn" routerLink="/register">
+        <span>💍</span>
+        Register
+      </button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <button class="menu-btn">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- Traditional bottom decoration -->
+  <div class="traditional-border">
+    ❖ ───── ❖ ───── ❖
+  </div>
+
+</header>

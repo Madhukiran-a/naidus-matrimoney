@@ -1,0 +1,309 @@
+<app-header></app-header>
+<!-- CONTACT HERO -->
+<section class="contact-hero">
+  <div class="hero-overlay">
+    <div class="om-symbol">ॐ</div>
+
+    <h1>Contact Us</h1>
+
+    <p>
+      మీ జీవిత భాగస్వామి కోసం మా ప్రయాణంలో మాతో కలిసి ఉండండి
+    </p>
+
+    <span>We are here to help you find your perfect life partner</span>
+  </div>
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+
+  <div class="section-title">
+    <span>✦</span>
+    <h2>Get In Touch</h2>
+    <span>✦</span>
+
+    <p>
+      Have questions or need assistance? Our team is always happy to help.
+    </p>
+  </div>
+
+
+  <div class="contact-container">
+
+    <!-- CONTACT INFORMATION -->
+    <div class="contact-info">
+
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+
+        <div>
+          <h3>Our Office</h3>
+          <p>
+            Hyderabad, Telangana<br>
+            Andhra Pradesh & Telangana
+          </p>
+        </div>
+      </div>
+
+
+      <div class="info-card">
+        <div class="info-icon">📞</div>
+
+        <div>
+          <h3>Phone</h3>
+          <p>
+            +91 98765 43210
+          </p>
+          <small>Available: 9:00 AM – 7:00 PM</small>
+        </div>
+      </div>
+
+
+      <div class="info-card">
+        <div class="info-icon">✉️</div>
+
+        <div>
+          <h3>Email</h3>
+          <p>
+            support&#64;manabandham.com
+          </p>
+          <small>We usually reply within 24 hours</small>
+        </div>
+      </div>
+
+
+      <div class="info-card">
+        <div class="info-icon">💬</div>
+
+        <div>
+          <h3>WhatsApp</h3>
+          <p>
+            Chat with our support team
+          </p>
+
+          <a href="#" class="whatsapp-btn">
+            Chat Now
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form">
+
+      <div class="form-heading">
+        <span>🙏</span>
+        <h2>Send Us a Message</h2>
+        <p>We would love to hear from you</p>
+      </div>
+
+
+      <form [formGroup]="contactForm">
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label>Full Name</label>
+
+            <input formControlName="fullname"
+              type="text"
+              placeholder="Enter your full name"
+            />
+            <small
+            *ngIf="contactForm.get('fullname')?.touched &&
+                 contactForm.get('fullname')?.hasError('required')">
+            full name is required.
+          </small>
+          
+          </div>
+
+
+          <div class="form-group">
+            <label>Phone Number</label>
+
+            <input
+              type="tel" formControlName="phonenumber"
+              placeholder="Enter your phone number"
+            />
+             <small
+            *ngIf="contactForm.get('phonenumber')?.touched &&
+                 contactForm.get('phonenumber')?.hasError('required')">
+            phone number is required.
+          </small>
+
+          <small
+            *ngIf="contactForm.get('phonenumber')?.touched &&
+                 contactForm.get('phonenumber')?.hasError('pattern')">
+            Enter a valid 10-digit phone number.
+          </small>
+          </div>
+         
+
+        </div>
+
+
+        <div class="form-group">
+          <label>Email Address</label>
+
+          <input
+            type="email" formControlName="emailaddress"
+            placeholder="Enter your email address"
+          />
+          <small
+            *ngIf="contactForm.get('emailaddress')?.touched &&
+                 contactForm.get('emailaddress')?.hasError('required')">
+            emailaddress is required.
+          </small>
+          <small
+            *ngIf="contactForm.get('emailaddress')?.touched &&
+                 contactForm.get('emailaddress')?.hasError('email')">
+            Enter a valid email address.
+          </small>
+        </div>
+
+
+        <div class="form-group">
+          <label>Subject</label>
+
+          <select formControlName="subject">
+            <option value="">Select a subject</option>
+            <option>Profile Assistance</option>
+            <option>Registration Help</option>
+            <option>Membership</option>
+            <option>Technical Support</option>
+            <option>General Enquiry</option>
+          </select>
+          <small
+            *ngIf="contactForm.get('subject')?.touched &&
+                 contactForm.get('subject')?.hasError('required')">
+            subject is required.
+          </small>
+
+          <small
+            *ngIf="contactForm.get('subject')?.touched &&
+                 contactForm.get('subject')?.hasError('required')">
+            Please select a subject.
+          </small>
+
+        </div>
+
+
+        <div class="form-group">
+          <label>Your Message</label>
+
+          <textarea formControlName="yourmessage"
+            rows="6"
+            placeholder="Write your message here..."
+          ></textarea>
+          <small
+            *ngIf="contactForm.get('yourmessage')?.touched &&
+                 contactForm.get('yourmessage')?.hasError('required')">
+            yourmessage is required.
+          </small>
+          <small
+            *ngIf="contactForm.get('yourmessage')?.touched &&
+                 contactForm.get('yourmessage')?.hasError('minlength')">
+           Message must contain at least 10 characters
+          </small>
+        </div>
+
+
+        <button type="submit" class="send-btn"(click)=onsubmit()>
+          Send Message
+          <span>➜</span>
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHY CONTACT US -->
+<section class="help-section">
+
+  <div class="section-title">
+    <span>✦</span>
+    <h2>How Can We Help You?</h2>
+    <span>✦</span>
+  </div>
+
+
+  <div class="help-cards">
+
+    <div class="help-card">
+      <div>💑</div>
+      <h3>Profile Assistance</h3>
+      <p>
+        Need help creating or updating your matrimonial profile?
+        Our team is here to guide you.
+      </p>
+    </div>
+
+
+    <div class="help-card">
+      <div>🔍</div>
+      <h3>Find Matches</h3>
+      <p>
+        Let us help you find compatible profiles based on your
+        preferences and family requirements.
+      </p>
+    </div>
+
+
+    <div class="help-card">
+      <div>🛡️</div>
+      <h3>Safety & Support</h3>
+      <p>
+        Your privacy and safety are important to us.
+        Contact us whenever you need assistance.
+      </p>
+    </div>
+
+
+    <div class="help-card">
+      <div>❤️</div>
+      <h3>Relationship Support</h3>
+      <p>
+        We are committed to helping families begin meaningful
+        and beautiful relationships.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="contact-cta">
+
+  <div class="cta-decoration">❈</div>
+
+  <h2>Begin Your Beautiful Journey</h2>
+
+  <p>
+    మీ జీవిత భాగస్వామిని కనుగొనే అందమైన ప్రయాణాన్ని ఈరోజే ప్రారంభించండి
+  </p>
+
+  <div class="cta-buttons">
+
+    <a routerLink="/findmatches" class="primary-btn">
+      Find Your Match
+    </a>
+
+    <a routerLink="/register" class="secondary-btn">
+      Create Profile
+    </a>
+
+  </div>
+
+</section>
+<app-footer></app-footer>
+

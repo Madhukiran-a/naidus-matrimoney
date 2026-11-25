@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<main class="profile-page">
+  <ng-container *ngIf="profile; else missingProfile">
+    <a class="back-link" routerLink="/findmatches">← Back to matches</a>
+                                                                                                                                                                                                                
+    <article class="profile-card">
+      <div class="profile-photo">
+        <img [src]="profile.image" [alt]="profile.name + ' profile photo'" />
+        <span class="verified" *ngIf="profile.verified">Verified profile</span>
+      </div>
+
+      <section class="profile-info">
+        <p class="eyebrow">TELUGU MATRIMONY PROFILE</p>
+        <h1>{{ profile.name }}</h1>
+        <p class="location">{{ profile.location }}</p>
+
+        <div class="compatibility">
+          <span>Compatibility</span>
+          <strong>{{ profile.compatibility }}%</strong>
+        </div>
+
+        <h2>About the profile</h2>
+        <dl class="details">
+          <div><dt>Age</dt><dd>{{ profile.age }} years</dd></div>
+          <div><dt>Gender</dt><dd>{{ profile.gender }}</dd></div>
+          <div><dt>Education</dt><dd>{{ profile.education }}</dd></div>
+          <div><dt>Profession</dt><dd>{{ profile.profession }}</dd></div>
+          <div><dt>Mother tongue</dt><dd>{{ profile.language }}</dd></div>
+        </dl>
+
+        <a class="back-button" routerLink="/findmatches">Back to matches</a>
+      </section>
+    </article>
+  </ng-container>
+
+  <ng-template #missingProfile>
+    <section class="not-found">
+      <p class="eyebrow">PROFILE UNAVAILABLE</p>
+      <h1>We couldn't find that profile.</h1>
+      <p>The profile may have been removed or the link may be incorrect.</p>
+      <a class="back-button" routerLink="/findmatches">Browse matches</a>
+    </section>
+  </ng-template>
+</main>
+
+<app-footer></app-footer>

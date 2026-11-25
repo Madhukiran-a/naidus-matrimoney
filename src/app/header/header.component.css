@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background:
+        linear-gradient(135deg,
+            #4a110d,
+            #701f17,
+            #4a110d);
+
+    color: white;
+
+    box-shadow:
+        0 8px 30px rgba(45, 10, 5, 0.35);
+
+    font-family: 'Noto Serif', serif;
+}
+
+
+/* ================================
+   TOP GOLD LINE
+================================ */
+
+.gold-line {
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #f5d477,
+            #fff1b0,
+            #f5d477,
+            transparent);
+}
+
+
+/* ================================
+   HEADER CONTAINER
+================================ */
+
+.header-container {
+    width: 92%;
+    max-width: 1450px;
+
+    margin: auto;
+
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* ================================
+   BRAND
+================================ */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    min-width: 260px;
+}
+
+
+.brand-symbol {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #5a160f;
+
+    background:
+        linear-gradient(135deg,
+            #fff0a8,
+            #d99b2b);
+
+    font-size: 30px;
+
+    box-shadow:
+        0 0 0 3px rgba(244, 205, 102, 0.2),
+        0 5px 18px rgba(0, 0, 0, 0.3);
+
+    transition: 0.4s ease;
+}
+
+
+.brand:hover .brand-symbol {
+    transform: rotate(10deg) scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(255, 216, 100, 0.7);
+}
+
+
+.brand-text h1 {
+    margin: 0;
+
+    color: #ffe49a;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+
+.brand-text span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #f5d8a0;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex: 1;
+}
+
+
+.navigation a {
+    position: relative;
+
+    padding: 12px 17px;
+
+    color: #fff7e3;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    border-radius: 30px;
+
+    transition: 0.35s ease;
+}
+
+
+/* Golden underline animation */
+
+.navigation a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 4px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #f3cd68;
+
+    transform: translateX(-50%);
+
+    transition: 0.35s ease;
+}
+
+
+.navigation a:hover {
+    color: #f8d775;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    transform: translateY(-2px);
+}
+
+
+.navigation a:hover::after,
+.navigation a.active::after {
+    width: 55%;
+}
+
+
+.navigation a.active {
+    color: #f7d477;
+}
+
+
+/* ================================
+   HEADER ACTIONS
+================================ */
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.header-actions button {
+    font-family: inherit;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    border-radius: 30px;
+
+    transition: all 0.35s ease;
+}
+
+
+/* Login */
+
+.login-btn {
+    padding: 11px 20px;
+
+    color: #ffe7a1;
+
+    background: transparent;
+
+    border: 1px solid rgba(246, 207, 111, 0.7);
+}
+
+
+.login-btn:hover {
+    background: rgba(255, 215, 100, 0.1);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Register */
+
+.register-btn {
+    padding: 12px 22px;
+
+    border: none;
+
+    color: #50140e;
+
+    background:
+        linear-gradient(135deg,
+            #ffe99b,
+            #dba536);
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.25);
+}
+
+
+.register-btn span {
+    margin-right: 5px;
+}
+
+
+.register-btn:hover {
+    transform:
+        translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 10px 25px rgba(244, 205, 100, 0.35);
+}
+
+
+/* ================================
+   TRADITIONAL BORDER
+================================ */
+
+.traditional-border {
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #e9bd52;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    opacity: 0.8;
+
+    border-top:
+        1px solid rgba(238, 195, 87, 0.25);
+}
+
+
+/* ================================
+   MOBILE MENU BUTTON
+================================ */
+
+.menu-btn {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    border: 1px solid #dcb34f;
+
+    background: transparent;
+
+    color: #f8d77b;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 1050px) {
+
+    .navigation {
+        gap: 0;
+    }
+
+    .navigation a {
+        padding: 10px 11px;
+
+        font-size: 14px;
+    }
+
+    .brand {
+        min-width: auto;
+    }
+
+    .brand-text h1 {
+        font-size: 21px;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .navigation,
+    .header-actions {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-container {
+        min-height: 78px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .header-container {
+        width: 90%;
+    }
+
+    .brand-symbol {
+        width: 44px;
+        height: 44px;
+
+        font-size: 25px;
+    }
+
+    .brand-text h1 {
+        font-size: 18px;
+    }
+
+    .brand-text span {
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+    .traditional-border {
+        font-size: 8px;
+    }
+
+}

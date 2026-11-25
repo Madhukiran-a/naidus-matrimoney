@@ -1,0 +1,836 @@
+/* =====================================
+   REGISTER PAGE
+===================================== */
+
+.register-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      #8b0035,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      #5b001f,
+      transparent 40%
+    ),
+    #fff8ed;
+}
+
+
+/* =====================================
+   DECORATIVE CIRCLES
+===================================== */
+
+.decor-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(180, 134, 20, 0.25);
+
+  pointer-events: none;
+}
+
+.circle-one {
+  width: 500px;
+  height: 500px;
+
+  top: -250px;
+  left: -220px;
+
+  animation: rotateCircle 20s linear infinite;
+}
+
+.circle-two {
+  width: 550px;
+  height: 550px;
+
+  right: -280px;
+  bottom: -280px;
+
+  animation: rotateCircleReverse 25s linear infinite;
+}
+
+
+/* =====================================
+   MAIN CONTAINER
+===================================== */
+
+.register-container {
+  width: 100%;
+  max-width: 1100px;
+
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  background: white;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  position: relative;
+  z-index: 2;
+
+  box-shadow:
+    0 30px 80px rgba(80, 0, 25, 0.22);
+
+  animation: containerAppear 0.9s ease;
+}
+
+
+/* =====================================
+   LEFT BANNER
+===================================== */
+
+.register-banner {
+  padding: 60px 45px;
+
+  min-height: 650px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  color: white;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #720026,
+      #a0003b,
+      #56001d
+    );
+}
+
+
+/* Decorative symbols */
+
+.register-banner::before {
+  content: "❈";
+
+  position: absolute;
+
+  font-size: 350px;
+
+  color: rgba(255, 255, 255, 0.035);
+
+  top: -100px;
+  left: -90px;
+
+  animation: rotateSlow 30s linear infinite;
+}
+
+.register-banner::after {
+  content: "❈";
+
+  position: absolute;
+
+  font-size: 280px;
+
+  color: rgba(244, 214, 117, 0.04);
+
+  bottom: -100px;
+  right: -80px;
+
+  animation: rotateSlow 25s linear infinite reverse;
+}
+
+
+/* =====================================
+   OM SYMBOL
+===================================== */
+
+.om-symbol {
+  font-size: 65px;
+
+  color: #f4d675;
+
+  margin-bottom: 10px;
+
+  animation:
+    omGlow 2.5s ease-in-out infinite alternate;
+}
+
+
+/* =====================================
+   BRAND
+===================================== */
+
+.register-banner h1 {
+  margin: 0;
+
+  font-size: 40px;
+
+  font-family: Georgia, serif;
+
+  color: #f4d675;
+
+  letter-spacing: 1px;
+}
+
+.tagline {
+  margin-top: 8px;
+
+  color: #ffecc0;
+
+  font-size: 15px;
+
+  letter-spacing: 1px;
+}
+
+
+.gold-line {
+  width: 100px;
+  height: 2px;
+
+  margin: 25px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #f4d675,
+      transparent
+    );
+}
+
+
+.register-banner h2 {
+  font-family: Georgia, serif;
+
+  font-size: 31px;
+
+  margin: 10px 0;
+
+  color: white;
+}
+
+
+.banner-text {
+  max-width: 350px;
+
+  line-height: 1.8;
+
+  color: #f8ded5;
+
+  font-size: 15px;
+}
+
+
+.wedding-symbols {
+  margin-top: 35px;
+
+  color: #f4d675;
+
+  letter-spacing: 10px;
+
+  font-size: 18px;
+
+  animation:
+    floatSymbols 3s ease-in-out infinite;
+}
+
+
+.telugu-quote {
+  margin-top: 35px;
+
+  padding: 15px 20px;
+
+  border-top: 1px solid rgba(244, 214, 117, 0.35);
+  border-bottom: 1px solid rgba(244, 214, 117, 0.35);
+
+  color: #ffecc0;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+}
+
+
+/* =====================================
+   FORM SECTION
+===================================== */
+
+.register-form-section {
+  padding: 45px 50px;
+}
+
+
+/* =====================================
+   FORM HEADER
+===================================== */
+
+.form-header {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+
+.register-icon {
+  width: 62px;
+  height: 62px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #720026,
+      #a0003b
+    );
+
+  font-size: 28px;
+
+  box-shadow:
+    0 10px 25px rgba(114, 0, 38, 0.25);
+
+  animation:
+    iconFloat 2.5s ease-in-out infinite;
+}
+
+
+.form-header h2 {
+  margin: 15px 0 5px;
+
+  color: #720026;
+
+  font-family: Georgia, serif;
+
+  font-size: 32px;
+}
+
+
+.form-header p {
+  color: #80675c;
+
+  font-size: 14px;
+}
+
+
+/* =====================================
+   FORM ROW
+===================================== */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+
+/* =====================================
+   FORM GROUP
+===================================== */
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #5d3d35;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =====================================
+   INPUT BOX
+===================================== */
+
+.input-box {
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #dfcda8;
+
+  border-radius: 11px;
+
+  background: #fffdf8;
+
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+
+.input-box > span {
+  padding-left: 13px;
+
+  font-size: 17px;
+}
+
+
+.input-box input,
+.input-box select {
+  flex: 1;
+
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  padding: 13px;
+
+  font-size: 14px;
+
+  color: #4b3029;
+
+  font-family: inherit;
+}
+
+
+.input-box select {
+  cursor: pointer;
+}
+
+
+.input-box input[type="date"] {
+  color: #604b43;
+}
+
+
+.input-box:focus-within {
+  border-color: #b8860b;
+
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.13);
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================
+   PASSWORD BUTTON
+===================================== */
+
+.password-btn {
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  padding: 8px 13px;
+
+  font-size: 16px;
+}
+
+
+/* =====================================
+   TERMS
+===================================== */
+
+.terms {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin: 8px 0 22px;
+
+  color: #80675c;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  cursor: pointer;
+}
+
+
+.terms input {
+  margin-top: 3px;
+
+  accent-color: #720026;
+}
+
+
+.terms a {
+  color: #720026;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+
+.terms a:hover {
+  color: #b8860b;
+
+  text-decoration: underline;
+}
+
+
+/* =====================================
+   REGISTER BUTTON
+===================================== */
+
+.register-main-btn {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 35px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #720026,
+      #a0003b
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 25px rgba(114, 0, 38, 0.25);
+
+  transition: all 0.4s ease;
+}
+
+
+.register-main-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.3),
+      transparent
+    );
+
+  transition: 0.6s;
+}
+
+
+.register-main-btn:hover::before {
+  left: 100%;
+}
+
+
+.register-main-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 35px rgba(114, 0, 38, 0.35);
+}
+
+
+.register-main-btn span {
+  margin-left: 10px;
+
+  transition: 0.3s;
+}
+
+
+.register-main-btn:hover span {
+  margin-left: 18px;
+}
+
+
+/* =====================================
+   LOGIN LINK
+===================================== */
+
+.login-link {
+  text-align: center;
+
+  margin-top: 22px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #eadbc3;
+}
+
+
+.login-link p {
+  display: inline;
+
+  color: #80675c;
+
+  font-size: 13px;
+}
+
+
+.login-link a {
+  margin-left: 7px;
+
+  color: #720026;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+
+.login-link a:hover {
+  color: #b8860b;
+
+  text-decoration: underline;
+}
+
+
+/* =====================================
+   SECURITY
+===================================== */
+
+.security-note {
+  text-align: center;
+
+  margin-top: 20px;
+
+  color: #9a8378;
+
+  font-size: 11px;
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes containerAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(40px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+@keyframes omGlow {
+
+  from {
+    text-shadow:
+      0 0 5px #d4af37;
+  }
+
+  to {
+    text-shadow:
+      0 0 15px #d4af37,
+      0 0 30px #d4af37;
+  }
+
+}
+
+
+@keyframes iconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+
+}
+
+
+@keyframes floatSymbols {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+@keyframes rotateCircle {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes rotateCircleReverse {
+
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+
+}
+
+
+@keyframes rotateSlow {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+  .register-container {
+    grid-template-columns: 1fr;
+
+    max-width: 600px;
+  }
+
+  .register-banner {
+    min-height: 380px;
+
+    padding: 45px 30px;
+  }
+
+  .register-form-section {
+    padding: 45px 35px;
+  }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+  .register-page {
+    padding: 15px 10px;
+  }
+
+  .register-container {
+    border-radius: 20px;
+  }
+
+  .register-banner {
+    min-height: 320px;
+
+    padding: 35px 20px;
+  }
+
+  .register-banner h1 {
+    font-size: 32px;
+  }
+
+  .register-banner h2 {
+    font-size: 25px;
+  }
+
+  .om-symbol {
+    font-size: 50px;
+  }
+
+  .register-form-section {
+    padding: 35px 20px;
+  }
+
+  .form-header h2 {
+    font-size: 28px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .terms {
+    font-size: 11px;
+  }
+
+}
